@@ -25,8 +25,6 @@ public class Shop {
 		int opcion = 0;
 		boolean exit = false;
 
-	
-
 		do {
 			System.out.println("\n");
 			System.out.println("===========================");
@@ -95,7 +93,7 @@ public class Shop {
 	 * show current total cash
 	 */
 	private void showCash() {
-		System.out.println("Dinero actual: " );
+		System.out.println("Dinero actual: ");
 	}
 
 	/**
@@ -246,7 +244,6 @@ public class Shop {
 		} else {
 			return false;
 		}
-
 	}
 
 	/**
@@ -261,7 +258,6 @@ public class Shop {
 			}
 		}
 		return null;
-
 	}
 
 }

@@ -2,18 +2,18 @@ package model;
 
 public class Product {
 	private int id;
-    private String name;
-    private double publicPrice;
-    private double wholesalerPrice;
-    private boolean available;
-    private int stock;
-    private static int totalProducts;
-    
-    static double EXPIRATION_RATE=0.60;
-    
+	private String name;
+	private double publicPrice;
+	private double wholesalerPrice;
+	private boolean available;
+	private int stock;
+	private static int totalProducts;
+
+	static double EXPIRATION_RATE = 0.60;
+
 	public Product(String name, double wholesalerPrice, boolean available, int stock) {
 		super();
-		this.id = totalProducts+1;
+		this.id = totalProducts + 1;
 		this.name = name;
 		this.wholesalerPrice = wholesalerPrice;
 		this.available = available;
@@ -76,15 +76,9 @@ public class Product {
 	public static void setTotalProducts(int totalProducts) {
 		Product.totalProducts = totalProducts;
 	}
-	
+
 	public void expire() {
 		EXPIRATION_RATE = 0.2;
-		this.publicPrice = this.getPublicPrice()*EXPIRATION_RATE;
+		this.publicPrice = this.getPublicPrice() * EXPIRATION_RATE;
 	}
-	
-	
-
-    
-
-    
 }
