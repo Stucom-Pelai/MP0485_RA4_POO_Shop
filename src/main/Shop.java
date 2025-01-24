@@ -32,14 +32,14 @@ public class Shop {
             System.out.println("Menu principal miTienda.com");
             System.out.println("===========================");
             System.out.println("1) Contar caja");
-            System.out.println("2) Añadir producto");
-            System.out.println("3) Añadir stock");
+            System.out.println("2) A\u00f1adir producto");
+            System.out.println("3) A\u00f1adir stock");
             System.out.println("4) Marcar producto proxima caducidad");
             System.out.println("5) Ver inventario");
             System.out.println("6) Venta");
             System.out.println("7) Ver ventas");
             System.out.println("10) Salir programa");
-            System.out.print("Seleccione una opción: ");
+            System.out.print("Seleccione una opcion: ");
             opcion = scanner.nextInt();
 
             switch (opcion) {
@@ -100,7 +100,7 @@ public class Shop {
      */
     public void addProduct() {
         if (isInventoryFull()) {
-            System.out.println("No se pueden añadir más productos");
+            System.out.println("No se pueden a\u00f1adir mas productos");
             return;
         }
         Scanner scanner = new Scanner(System.in);
@@ -125,7 +125,7 @@ public class Shop {
 
         if (product != null) {
             // ask for stock
-            System.out.print("Seleccione la cantidad a añadir: ");
+            System.out.print("Seleccione la cantidad a a\u00f1adir: ");
             int stock = scanner.nextInt();
             // update stock product
             product.setStock(stock);
@@ -194,7 +194,7 @@ public class Shop {
                 if (product.getStock() == 0) {
                     product.setAvailable(false);
                 }
-                System.out.println("Producto añadido con éxito");
+                System.out.println("Producto a\u00f1adido con éxito");
             }
 
             if (!productAvailable) {
@@ -205,7 +205,7 @@ public class Shop {
         // show cost total
         totalAmount = totalAmount * TAX_RATE;
         cash += totalAmount;
-        System.out.println("Venta realizada con éxito, total: " + totalAmount);
+        System.out.println("Venta realizada con exito, total: " + totalAmount);
     }
 
     /**
@@ -227,7 +227,7 @@ public class Shop {
      */
     public void addProduct(Product product) {
         if (isInventoryFull()) {
-            System.out.println("No se pueden añadir más productos, se ha alcanzado el máximo de " + inventory.length);
+            System.out.println("No se pueden a\u00f1adir mas productos, se ha alcanzado el maximo de " + inventory.length);
             return;
         }
         inventory[numberProducts] = product;
