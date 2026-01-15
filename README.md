@@ -27,23 +27,25 @@ run file main.Shop.java
 #### Class Diagram
 ```mermaid
 classDiagram
+    direction LR
     class Shop{
       -Amount cash
-	  -ArrayList~Product~ inventory  
+      -ArrayList~Product~ inventory  
       -ArrayList~Sale~ sales 
       +main() void
-	  +loadInventory() void
-	  +showCash() void
-	  +addProduct() void
-	  +addStock() void
-	  +setExpired() void
-	  +showInventory() void
-	  +sale() void
-	  +showSales() void
-	  +addProduct(Product product) void
-	  +isInventoryFull() boolean
-	  +findProduct(String name) Product
+      +loadInventory() void
+      +showCash() void
+      +addProduct() void
+      +addStock() void
+      +setExpired() void
+      +showInventory() void
+      +sale() void
+      +showSales() void
+      +addProduct(Product product) void
+      +isInventoryFull() boolean
+      +findProduct(String name) Product
     }
+
     class Product{
       -int id
       -String name
@@ -52,16 +54,29 @@ classDiagram
       -boolean available
       -int stock
       -int totalProducts$
-      expire() void
+      +expire() void
     }
+
     class Sale{
       -String client
       -ArrayList~Product~ products  
       -Amount amount
     }
+
     class Amount{
       -double value
-	    -String currency
+      -String currency
     }
+
+    %% Relaciones
+    Shop *-- "0..10" Product : inventory
+    Shop o-- "0..10" Sale : sales
+    Shop *-- "1" Amount : cash
+
+    Sale *-- "1..10" Product : products
+    Sale *-- "1" Amount : total
+
+    Product --> "1" Amount : publicPrice
+    Product --> "1" Amount : wholesalerPrice
 ```
 
